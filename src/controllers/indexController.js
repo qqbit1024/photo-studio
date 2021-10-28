@@ -1,6 +1,15 @@
+const { Product } = require('../db/models');
+
 class IndexController {
   static async indexRender(req, res, next) {
-    res.render('index');
+    const products = await Product.findAll();
+    const result = products.map((product) => {
+      if (product.product_name === 'photo3') {
+        product.flex = true;
+      }
+      return product;
+    });
+    res.render('index', { products });
   }
 }
 
