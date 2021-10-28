@@ -1,0 +1,62 @@
+.col-6 {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.placeholder-wave {
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Playfair Display', serif;
+}
+
+.navbar-brand {
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Playfair Display', serif;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Playfair Display', serif;
+  position: absolute;
+  margin-top: -30%;
+  z-index: 3;
+  margin-left: 2%;
+  color: #3b6a80;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+}
+
+.social {
+  width: 60px;
+  height: 60px;
+  background-color: gray;
+  display: inline-block;
+  border-radius: 50%;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.social img {
+  max-width: 50%;
+  width: auto;
+  height: auto;
+  max-height: 70%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.social-block {
+  display: flex;
+}
+
+.generalPhoto {
+  margin-bottom: 50px;
+}
