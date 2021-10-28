@@ -37,6 +37,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(process.env.PWD, 'src', 'public')));
 
 // custom middleware
+const { authorizate } = require('./src/middlewares/authMiddleware');
+
+app.use(authorizate);
 
 // routers import
 const indexRouter = require('./src/routes/indexRouter');
