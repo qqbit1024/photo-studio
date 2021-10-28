@@ -24,6 +24,7 @@ module.exports = (sequelize, DataTypes) => {
     price: { type: DataTypes.INTEGER, allowNull: false },
     desc_full: { type: DataTypes.TEXT, allowNull: false },
     desc_short: { type: DataTypes.TEXT, allowNull: false },
+    url:{ type: DataTypes.TEXT }
   }, {
     sequelize,
     modelName: 'Product',

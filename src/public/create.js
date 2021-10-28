@@ -21,6 +21,8 @@ const newProduct = (dataFromBack) => {
       <div class="card-body">
         <h5 class="card-title">${dataFromBack.product_name}</h5>
         <h6 class="card-subtitle mb-4 text-muted">Price: ${dataFromBack.price}</h6>
+        <a href='${dataFromBack.гкд}' class='card-subtitle mb-4 text-muted'>Ссылка на
+          картинку</a>
         <p class="card-text">${dataFromBack.desc_short}</p>
         <p class="card-text">${dataFromBack.desc_full}</p>
         <a href="/admin/products/${dataFromBack.id}/edit" class="card-link">Edit</a>

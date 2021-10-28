@@ -23,6 +23,10 @@ module.exports = {
         type: Sequelize.TEXT,
         allowNull: false,
       },
+      url: {
+        type: Sequelize.TEXT,
+      },
+    
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

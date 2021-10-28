@@ -4,7 +4,7 @@ class IndexController {
   static async indexRender(req, res, next) {
     const products = await Product.findAll();
     const result = products.map((product) => {
-      if (product.product_name === 'photo3') {
+      if (product.product_name === 'Гибкий тариф') {
         product.flex = true;
       }
       return product;

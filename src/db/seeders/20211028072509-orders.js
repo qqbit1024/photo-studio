@@ -10,9 +10,9 @@ module.exports = {
      * }], {});
     */
     const orders = [
-      { customer_id: 1, total: 400 },
-      { customer_id: 2, total: 200 },
-      { customer_id: 3, total: 500 },
+      { customer_id: 1, total: 30000 },
+      { customer_id: 2, total: 45000 },
+      { customer_id: 3, total: 50000 },
     ];
     await queryInterface.bulkInsert('Orders', orders, {});
   },

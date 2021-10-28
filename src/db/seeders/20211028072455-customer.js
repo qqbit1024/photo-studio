@@ -11,13 +11,13 @@ module.exports = {
     */
     const customers = [
       {
-        name: 'name1', surname: 'surname1', email: 'email1', phone: 'phone1',
+        name: 'Иван', surname: 'Фамилия', email: 'ivan@mail.ru', phone: '+7 (965) 123-23-23',
       },
       {
-        name: 'name2', surname: 'surname2', email: 'email2', phone: 'phone2',
+        name: 'Михаил', surname: 'Фамилия', email: 'misha@mail.ru', phone: '+7 (965) 123-23-23',
       },
       {
-        name: 'name2', surname: 'surname2', email: 'email2', phone: 'phone2',
+        name: 'Андрей', surname: 'Фамилия', email: 'andrei@mail.ru', phone: '+7 (965) 123-23-23',
       },
     ];
     await queryInterface.bulkInsert('Customers', customers, {});

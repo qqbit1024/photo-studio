@@ -90,13 +90,17 @@
   <div style='margin-bottom: 60px' class='row text-center'>
     <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, aliquid!</h2>
   </div>
-  <div class='row product-container'>
+  <div class='row product-container row-cols-4'>
     <!-- один котик -->
     {{#each products}}
-      <div class='col' data-productid='{{this.id}}' data-price='{{this.price}}'>
+      <div
+        class='col mb-5'
+        data-productid='{{this.id}}'
+        data-price='{{this.price}}'
+      >
         <div class='card' aria-hidden='true'>
           <img
-            src='./img/_104368428_gettyimages-543560762.jpeg'
+            src='{{this.url}}'
             class='card-img-top'
             width='350'
             height='196'
@@ -111,9 +115,13 @@
               {{this.desc_short}}
             </p>
             <p class='card-text placeholder-glow'>
-              Цена:
-              {{this.price}}
-              p./час
+              {{#if this.flex}}
+                Цена формируется автоматически
+              {{else}}
+                Цена:
+                {{this.price}}
+                p./час
+              {{/if}}
             </p>
             {{#if this.flex}}
               <a href='/orders' tabindex='-1' class='btn btn-dark'>Оформить</a>

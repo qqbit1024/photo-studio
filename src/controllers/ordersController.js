@@ -9,7 +9,7 @@ class OrdersController {
       const products = await Product.findAll({
         where: {
           product_name: {
-            [Op.not]: 'photo3',
+            [Op.not]: 'Гибкий тариф',
           },
         },
       });
