@@ -46,12 +46,14 @@ const indexRouter = require("./src/routes/indexRouter");
 const productsRouter = require("./src/routes/productsRouter");
 const ordersRouter = require("./src/routes/ordersRouter");
 const adminRouter = require("./src/routes/adminRouter");
+const requestFromClientRouter = require("./src/routes/requestFromClientRouter");
 
 // routes
 app.use("/products", productsRouter);
 app.use("/orders", ordersRouter);
 app.use("/admin", adminRouter);
 app.use("/", indexRouter);
+app.use("/request", requestFromClientRouter);
 
 app.listen(process.env.PORT, () => {
   console.log(`server started PORT: ${process.env.PORT}`);

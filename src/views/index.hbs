@@ -1,120 +1,84 @@
-<script defer src='/js/index.js'></script>
+<script defer src="/js/index.js"></script>
 <main>
   <!-- хироФото. -->
-  <div style='height: 80vh' class='generalPhoto'>
-    <img src='./img/h1_hero2.png' class='responsive' width='100%' />
+  <div style="height: 80vh" class="generalPhoto">
+    <img src="./img/h1_hero2.png" class="responsive" width="100%" />
     <h1>Photographer</h1>
   </div>
   <!-- ABOUT -->
-  <div class='row'>
-    <div class='col'>
+  <div class="row">
+    <div class="col">
       <h2>I'm Ready to Exceed Expectations Lorem ipsum</h2>
     </div>
-    <div style='margin-bottom: 100px' class='col'>
-      <p class='placeholder-wave'>
-        I'm Ready to Exceed Expectations Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Suspendisse varius enim in eros elementum tristique.
-        Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut
-        commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id
-        rutrum lorem imperdiet Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Voluptatibus itaque, recusandae eveniet dolorum omnis
-        provident soluta, est, excepturi aliquam minima id iure quisquam!
-        Impedit at quisquam, ea minus esse magni!
+    <div style="margin-bottom: 100px" class="col">
+      <p class="placeholder-wave">
+        I'm Ready to Exceed Expectations Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare,
+        eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo
+        cursus id rutrum lorem imperdiet Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Voluptatibus itaque, recusandae eveniet dolorum omnis provident soluta, est, excepturi
+        aliquam minima id iure quisquam! Impedit at quisquam, ea minus esse magni!
       </p>
     </div>
   </div>
 
   <!-- Примеры работ  -->
-  <div class='row text-center'>
+  <div class="row text-center">
     <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, aliquid!</h2>
   </div>
-  <div style='margin-bottom: 100px' class='row gy-5'>
+  <div style="margin-bottom: 100px" class="row gy-5">
 
-    <div class='col-4'>
-      <div class='p-3'>
-        <p><img
-            src='https://picsum.photos/id/241/700/400'
-            width='400'
-            height='200'
-          /></p>
+    <div class="col-4">
+      <div class="p-3">
+        <p><img src="https://picsum.photos/id/241/700/400" width="400" height="200" /></p>
       </div>
     </div>
-    <div class='col-4'>
-      <div class='p-3'>
-        <p><img
-            src='https://picsum.photos/id/240/700/400'
-            width='400'
-            height='200'
-          /></p>
+    <div class="col-4">
+      <div class="p-3">
+        <p><img src="https://picsum.photos/id/240/700/400" width="400" height="200" /></p>
       </div>
     </div>
-    <div class='col-4'>
-      <div class='p-3'>
-        <p><img
-            src='https://picsum.photos/id/237/700/400'
-            width='400'
-            height='200'
-          /></p>
+    <div class="col-4">
+      <div class="p-3">
+        <p><img src="https://picsum.photos/id/237/700/400" width="400" height="200" /></p>
       </div>
     </div>
-    <div class='col-4'>
-      <div class='p-3'>
-        <p><img
-            src='https://picsum.photos/id/238/700/400'
-            width='400'
-            height='200'
-          /></p>
+    <div class="col-4">
+      <div class="p-3">
+        <p><img src="https://picsum.photos/id/238/700/400" width="400" height="200" /></p>
       </div>
     </div>
-    <div class='col-4'>
-      <div class='p-3'>
-        <p><img
-            src='https://picsum.photos/id/228/700/400'
-            width='400'
-            height='200'
-          /></p>
+    <div class="col-4">
+      <div class="p-3">
+        <p><img src="https://picsum.photos/id/228/700/400" width="400" height="200" /></p>
       </div>
     </div>
-    <div class='col-4'>
-      <div class='p-3'>
-        <p><img
-            src='https://picsum.photos/id/218/700/400'
-            width='400'
-            height='200'
-          /></p>
+    <div class="col-4">
+      <div class="p-3">
+        <p><img src="https://picsum.photos/id/218/700/400" width="400" height="200" /></p>
       </div>
     </div>
   </div>
 
   <!-- Продукты компании -->
-  <div style='margin-bottom: 60px' class='row text-center'>
+  <div style="margin-bottom: 60px" class="row text-center">
     <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, aliquid!</h2>
   </div>
-  <div class='row product-container row-cols-4'>
+  <div class="row product-container row-cols-4">
     <!-- один котик -->
     {{#each products}}
-      <div
-        class='col mb-5'
-        data-productid='{{this.id}}'
-        data-price='{{this.price}}'
-      >
-        <div class='card' aria-hidden='true'>
-          <img
-            src='{{this.url}}'
-            class='card-img-top'
-            width='350'
-            height='196'
-            alt='Белый котик'
-          />
-          <div class='card-body'>
-            <h5 class='card-title placeholder-glow'>
+      <div class="col mb-5" data-productid="{{this.id}}" data-price="{{this.price}}">
+        <div class="card" aria-hidden="true">
+          <img src="{{this.url}}" class="card-img-top" width="350" height="196" alt="Белый котик" />
+          <div class="card-body">
+            <h5 class="card-title placeholder-glow">
               {{this.product_name}}
             </h5>
-            <p class='card-text placeholder-glow'>
+            <p class="card-text placeholder-glow">
               Описание:
               {{this.desc_short}}
             </p>
-            <p class='card-text placeholder-glow'>
+            <p class="card-text placeholder-glow">
               {{#if this.flex}}
                 Цена формируется автоматически
               {{else}}
@@ -124,15 +88,15 @@
               {{/if}}
             </p>
             {{#if this.flex}}
-              <a href='/orders' tabindex='-1' class='btn btn-dark'>Оформить</a>
+              <a href="/orders" tabindex="-1" class="btn btn-dark">Оформить</a>
             {{else}}
               <a
-                href='#'
-                tabindex='-1'
-                class='btn btn-dark'
-                data-bs-toggle='modal'
-                data-bs-target='#exampleModal'
-                id='button'
+                href="#"
+                tabindex="-1"
+                class="btn btn-dark"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+                id="button"
               >Оформить</a>
             {{/if}}
           </div>
@@ -141,73 +105,49 @@
       </div>
     {{/each}}
   </div>
-
 </main>
 
 <div
-  class='modal fade'
-  id='exampleModal'
-  tabindex='-1'
-  aria-labelledby='exampleModalLabel'
-  aria-hidden='true'
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
 >
-  <div class='modal-dialog modal-dialog-centered'>
-    <div class='modal-content'>
-      <div class='modal-header'>
-        <h5 class='modal-title' id='exampleModalLabel'>Оформить заказ</h5>
-        <button
-          type='button'
-          class='btn-close'
-          data-bs-dismiss='modal'
-          aria-label='Close'
-        ></button>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Оформить заказ</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class='modal-body'>
-        <form
-          action='/orders'
-          method='post'
-          name='orderForm'
-          data-formproductid=''
-          data-price=''
-        >
-          <div class='mb-3'>
-            <label for='recipient-name' class='col-form-label'>Имя</label>
-            <input type='text' class='form-control' name='name' required />
+      <div class="modal-body">
+        <form action="/orders" method="post" name="orderForm" data-formproductid="" data-price="">
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Имя</label>
+            <input type="text" class="form-control" name="name" required />
           </div>
-          <div class='mb-3'>
-            <label for='recipient-name' class='col-form-label'>Фамилия</label>
-            <input type='text' class='form-control' name='surname' required />
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Фамилия</label>
+            <input type="text" class="form-control" name="surname" required />
           </div>
-          <div class='mb-3'>
-            <label for='recipient-name' class='col-form-label'>Телефон</label>
-            <input type='text' class='form-control' name='phone' required />
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Телефон</label>
+            <input type="text" class="form-control" name="phone" required />
           </div>
-          <div class='mb-3'>
-            <label for='recipient-name' class='col-form-label'>Email</label>
-            <input type='email' class='form-control' name='email' required />
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Email</label>
+            <input type="email" class="form-control" name="email" required />
           </div>
-          <div class='mb-3'>
-            <label for='recipient-name' class='col-form-label'>Количество часов</label>
-            <input
-              type='text'
-              class='form-control'
-              value='1'
-              name='hours'
-              required
-            />
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Количество часов</label>
+            <input type="text" class="form-control" value="1" name="hours" required />
           </div>
-          <div class='mb-3'>
-            <label for='recipient-name' class='col-form-label'>Количество камер</label>
-            <input
-              type='text'
-              class='form-control'
-              value='1'
-              name='equip_count'
-              required
-            />
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Количество камер</label>
+            <input type="text" class="form-control" value="1" name="equip_count" required />
           </div>
-          <div class='modal-footer'>
-            <button type='submit' class='btn btn-dark'>Оформить</button>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-dark">Оформить</button>
           </div>
         </form>
       </div>

@@ -1,0 +1,21 @@
+<script defer src="/js/deleteRequest.js"></script>
+<script defer src="/js/editStatusRequests.js"></script>
+
+<div data-postWrapper>
+  <h2>Request list</h2>
+  {{#each requests}}
+    <div class="card" style="width: 50rem" id="{{this.id}}" data-requestid="{{this.id}}">
+      <div class="card-body">
+        <h5 class="card-title">Имя: {{this.customer_name}} {{this.customer_surname}}</h5>
+        <h6 class="card-title">Email: {{this.email}}</h6>
+        <h6 class="card-title">Телефон: {{this.phone}}</h6>
+        <div class="card-text" value="{{this.id}}">Интересующая тема:
+          {{this.Product.product_name}}</div>
+        <p class="card-text">Сообщение от клиента: {{this.message}}</p>
+        <p data-status class="card-text">Статус: {{this.status}}</p>
+        <button type="submit">Done</button>
+        <button type="submit">Delete</button>
+      </div>
+    </div>
+  {{/each}}
+</div>

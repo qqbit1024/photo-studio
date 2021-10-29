@@ -1,0 +1,46 @@
+<form action="/admin/requests" method="post" name="productForm">
+  <div class="mb-3">
+    <label for="input customer_name" class="form-label">Customer name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="input customer_name"
+      placeholder="Customer name"
+      name="customer_name"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="input customer_surname" class="form-label">Customer surname</label>
+    <input
+      type="text"
+      class="form-control"
+      id="input customer_surname"
+      placeholder="Customer surname"
+      name="customer_surname"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="input email" class="form-label">email</label>
+    <input type="text" class="form-control" id="input email" placeholder="email" name="email" />
+  </div>
+  <div class="mb-3">
+    <label for="input phone" class="form-label">Phone</label>
+    <input type="text" class="form-control" id="input phone" placeholder="Phone" name="phone" />
+  </div>
+  <div class="mb-3">
+    <label for="input message" class="form-label">Message</label>
+    <input
+      type="text"
+      class="form-control"
+      id="input message"
+      placeholder="Message"
+      name="message"
+    />
+  </div>
+  <select name="product_id" id="">
+    {{#each products}}
+      <option value="{{this.id}}">{{this.product_name}}</option>
+    {{/each}}
+  </select>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

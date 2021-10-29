@@ -1,79 +1,60 @@
-<script defer src='/delete.js'></script>
-<script defer src='/create.js'></script>
-{{! <script defer src="/edit.js"></script> }}
+<script defer src="/js/deleteProduct.js"></script>
+<script defer src="/js/createProduct.js"></script>
 
-<form name='productForm'>
-  <div class='mb-3'>
-    <label for='input product_name' class='form-label'>Product name</label>
+<form name="productForm">
+  <div class="mb-3">
+    <label for="input product_name" class="form-label">Product name</label>
     <input
-      type='text'
-      class='form-control'
-      id='input product_name'
-      placeholder='Product name'
-      name='product_name'
+      type="text"
+      class="form-control"
+      id="input product_name"
+      placeholder="Product name"
+      name="product_name"
     />
   </div>
-  <div class='mb-3'>
-    <label for='input price' class='form-label'>Price</label>
+  <div class="mb-3">
+    <label for="input price" class="form-label">Price</label>
+    <input type="text" class="form-control" id="input price" placeholder="Price" name="price" />
+  </div>
+  <div class="mb-3">
+    <label for="input desc_full" class="form-label">Description full</label>
     <input
-      type='text'
-      class='form-control'
-      id='input price'
-      placeholder='Price'
-      name='price'
+      type="text"
+      class="form-control"
+      id="input desc_full"
+      placeholder="Description full"
+      name="desc_full"
     />
   </div>
-  <div class='mb-3'>
-    <label for='input desc_full' class='form-label'>Description full</label>
+  <div class="mb-3">
+    <label for="input desc_short" class="form-label">Description short</label>
     <input
-      type='text'
-      class='form-control'
-      id='input desc_full'
-      placeholder='Description full'
-      name='desc_full'
+      type="text"
+      class="form-control"
+      id="input desc_short"
+      placeholder="Description short"
+      name="desc_short"
     />
   </div>
-  <div class='mb-3'>
-    <label for='input desc_short' class='form-label'>Description short</label>
-    <input
-      type='text'
-      class='form-control'
-      id='input desc_short'
-      placeholder='Description short'
-      name='desc_short'
-    />
+  <div class="mb-3">
+    <label for="input url" class="form-label">Url</label>
+    <input type="text" class="form-control" id="input url" placeholder="Url" name="url" />
   </div>
-  <div class='mb-3'>
-    <label for='input desc_short' class='form-label'>Url</label>
-    <input
-      type='text'
-      class='form-control'
-      id='input desc_short'
-      placeholder='Description short'
-      name='url'
-    />
-  </div>
-  <button type='submit' class='btn btn-primary'>Submit</button>
+  <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
 <div data-postWrapper>
   <h2>Product list</h2>
   {{#each products}}
-    <div
-      class='card'
-      style='width: 50rem'
-      id='{{this.id}}'
-      data-productid='{{this.id}}'
-    >
-      <div class='card-body'>
-        <h5 class='card-title'>{{this.product_name}}</h5>
-        <h6 class='card-subtitle mb-4 text-muted'>Price: {{this.price}}</h6>
-        <a href='{{this.url}}' class='card-subtitle mb-4 text-muted'>Ссылка на
-          картинку</a>
-        <p class='card-text'>{{this.desc_short}}</p>
-        <p class='card-text'>{{this.desc_full}}</p>
-        <a href='/admin/products/{{this.id}}' class='card-link'>Edit</a>
-        <button type='submit'>Delete</button>
+    <div class="card" style="width: 50rem" id="{{this.id}}" data-productid="{{this.id}}">
+      <div class="card-body">
+        <h5 class="card-title">{{this.product_name}}</h5>
+        <h6 class="card-subtitle mb-4 text-muted">Price: {{this.price}}</h6>
+        <a href="{{this.url}}" class="card-subtitle mb-4 text-muted">Ссылка на картинку</a>
+        <p class="card-text">{{this.desc_short}}</p>
+        <p class="card-text">{{this.desc_full}}</p>
+        <a href="/admin/products/{{this.id}}" class="card-link">Edit</a>
+        <button type="submit">Delete</button>
       </div>
     </div>
   {{/each}}
