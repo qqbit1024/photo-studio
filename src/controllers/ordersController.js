@@ -78,14 +78,15 @@ class OrdersController {
         });
       });
       
-      // send Mail
+      const productName = await Product.findOne({where:{id:products[0].id}})
       const text = `
       phone: ${customerInfo.phone}
       name: ${customerInfo.name}
       surname: ${customerInfo.surname}
       total: ${total}
-      product: ${products}
-      `
+      product: ${productName.product_name } hours:  ${products[0].hours}, camera: ${products[0].equip_count}
+      `; 
+
       await sendMail(text, 'kim__dima@mail.ru')
       console.log('sended');
 
