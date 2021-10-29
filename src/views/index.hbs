@@ -98,6 +98,11 @@
                 data-bs-target="#exampleModal"
                 id="button"
               >Оформить</a>
+              <a
+                href='/products/{{this.id}}'
+                tabindex='-1'
+                class='btn btn-dark'
+              >Подробнее</a>
             {{/if}}
           </div>
         </div>
@@ -146,8 +151,10 @@
             <label for="recipient-name" class="col-form-label">Количество камер</label>
             <input type="text" class="form-control" value="1" name="equip_count" required />
           </div>
-          <div class="modal-footer">
-            <button type="submit" class="btn btn-dark">Оформить</button>
+
+          <div class='modal-footer'>
+            <span>Общая сумма: <span id='total'>0</span>руб. </span>
+            <button type='submit' class='btn btn-dark' id=''>Оформить</button>
           </div>
         </form>
       </div>
