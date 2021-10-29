@@ -1,34 +1,36 @@
 <script defer src='/js/admin.js'></script>
-<div class='listWrapper'>
-  <ul class='list-group position-relative'>
-    {{#each orders}}
-      <li class='list-group-item' id='{{this.Customer.id}}'>Имя:
-        <b>{{this.Customer.name}}</b>
-        Телефон:
-        <b>{{this.Customer.phone}}</b>
-        Email:
-        <b>{{this.Customer.email}}</b>
-        Общая сумма:
-        <b>{{this.total}}</b>
-        {{#if this.status}}
-          <span id='status'>Статус заказа: <b>Выполнено</b></span>
-        {{else}}
-          <span id='status'>Статус заказа: <b>Не выполнено</b></span>
-        {{/if}}
-        {{#if this.status}}
-          <button
-            name='buttonForList'
-            type='submit'
-            class='btn btn-dark position-absolute top-0 start-100 disabled'
-          >Выполнено!</button>
-        {{else}}
-          <button
-            name='buttonForList'
-            type='submit'
-            class='btn btn-dark position-absolute top-0 start-100'
-          >Выполнено</button>
-        {{/if}}
-      </li>
-    {{/each}}
-  </ul>
+<div class='container'>
+  <div class='listWrapper'>
+    <ul class='list-group position-relative'>
+      {{#each orders}}
+        <li class='list-group-item' id='{{this.Customer.id}}'>Имя:
+          <b>{{this.Customer.name}}</b>
+          Телефон:
+          <b>{{this.Customer.phone}}</b>
+          Email:
+          <b>{{this.Customer.email}}</b>
+          Общая сумма:
+          <b>{{this.total}}</b>
+          {{#if this.status}}
+            <span id='status'>Статус заказа: <b>Выполнено</b></span>
+          {{else}}
+            <span id='status'>Статус заказа: <b>Не выполнено</b></span>
+          {{/if}}
+          {{#if this.status}}
+            <button
+              name='buttonForList'
+              type='submit'
+              class='btn btn-dark position-absolute top-0 start-100 disabled'
+            >Выполнено!</button>
+          {{else}}
+            <button
+              name='buttonForList'
+              type='submit'
+              class='btn btn-dark position-absolute top-0 start-100'
+            >Выполнено</button>
+          {{/if}}
+        </li>
+      {{/each}}
+    </ul>
+  </div>
 </div>

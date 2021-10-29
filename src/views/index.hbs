@@ -134,6 +134,11 @@
                 data-bs-target='#exampleModal'
                 id='button'
               >Оформить</a>
+              <a
+                href='/products/{{this.id}}'
+                tabindex='-1'
+                class='btn btn-dark'
+              >Подробнее</a>
             {{/if}}
           </div>
         </div>
@@ -207,7 +212,8 @@
             />
           </div>
           <div class='modal-footer'>
-            <button type='submit' class='btn btn-dark'>Оформить</button>
+            <span>Общая сумма: <span id='total'>0</span>руб. </span>
+            <button type='submit' class='btn btn-dark' id=''>Оформить</button>
           </div>
         </form>
       </div>

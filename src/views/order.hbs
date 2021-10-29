@@ -15,7 +15,13 @@
           name='product'
         />
         <label class='form-check-label' for='flexCheckDefault'>
-          {{this.product_name}}
+          <div>
+            Услуга:
+            {{this.product_name}}
+          </div>
+          Цена:
+          {{this.price}}
+          руб./час
         </label>
         <div class='input-group w-25'>
           <div class='input-group-prepend'>
@@ -73,7 +79,8 @@
             <input type='email' class='form-control' name='email' required />
           </div>
           <div class='modal-footer'>
-            <button type='submit' class='btn btn-primary'>Оформить</button>
+            <span>Общая сумма: <span id='total'></span> </span>
+            <button type='submit' class='btn btn-dark'>Оформить</button>
           </div>
         </form>
       </div>

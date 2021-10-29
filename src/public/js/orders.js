@@ -1,14 +1,3 @@
-const exampleModal = document.getElementById('exampleModal');
-
-exampleModal.addEventListener('show.bs.modal', (event) => {
-  // Button that triggered the modal
-  // Extract info from data-bs-* attributes
-  // If necessary, you could initiate an AJAX request here
-  // and then do the updating in a callback.
-  //
-  // Update the modal's content.
-});
-
 const $orderForm = document.forms.orderForm;
 
 document.addEventListener('submit', async (event) => {
@@ -33,7 +22,14 @@ document.addEventListener('submit', async (event) => {
       });
     }
   });
+  
   const customerInfo = Object.fromEntries(new FormData($orderForm));
+  event.target.innerHTML = `<span
+      class='spinner-border spinner-border-sm'
+      role='status'
+      aria-hidden='true'
+    ></span>
+    Loading...`
   const response = await fetch('/orders', {
     method: 'POST',
     headers: {
@@ -41,8 +37,28 @@ document.addEventListener('submit', async (event) => {
     },
     body: JSON.stringify({ customerInfo, products, total }),
   });
+  
 
   if (response.ok) {
     window.location = '/';
   }
 });
+
+const $btn = document.querySelector('.btn')
+const $spanTotal = document.querySelector('#total')
+
+$btn.addEventListener('click', (event)=> {
+  const all = document.querySelectorAll('[data-productid]');
+  let total = 0;
+  all.forEach((product) => {
+    const checkbox = product.querySelector('.form-check-input');
+    const hours = product.querySelector('#hours').value;
+    const equip_count = product.querySelector('#equip_count').value;
+    const { price } = product.dataset;
+    if (checkbox.checked) {
+      total += hours * equip_count * price;
+    }
+
+  });
+  $spanTotal.textContent = total + ' pуб.';
+})
