@@ -1,7 +1,29 @@
+const nodemailer = require('nodemailer');
+const { send } = require('process');
 const { Op } = require('sequelize');
 const {
   Customer, Order, Product, OrderProduct, Quantity,
 } = require('../db/models');
+
+const sendMail = async function (text, email) {
+
+  let transporter =  nodemailer.createTransport({
+    service:'gmail', 
+    auth: {
+      user: 'tes124444@gmail.com', //тестовы акк
+      pass: 'elbrusBOOTCAMP123', // pass
+    },
+  });
+  let info = await transporter.sendMail({
+    from: 'tes124444@gmail.com', 
+    to: email, 
+    subject: "Photo-studio ✔️", 
+    text: `Новая заявка: ${text}`, 
+    html: `<b>Новая заявка: ${text}</b>`, 
+  });
+  console.log("Message sent: %s", info.messageId);
+
+}
 
 class OrdersController {
   static async show(req, res) {
@@ -44,7 +66,6 @@ class OrdersController {
 
       // create OrderProduct Quantity
       products.forEach(async (product) => {
-        console.log('asdfasdf');
         await OrderProduct.create({
           order_id: orderId,
           product_id: product.id,
@@ -56,6 +77,17 @@ class OrdersController {
           equip_count: product.equip_count,
         });
       });
+      
+      // send Mail
+      const text = `
+      phone: ${customerInfo.phone}
+      name: ${customerInfo.name}
+      surname: ${customerInfo.surname}
+      total: ${total}
+      product: ${products}
+      `
+      await sendMail(text, 'kim__dima@mail.ru')
+      console.log('sended');
 
       res.sendStatus(200);
     } catch (error) {
@@ -63,6 +95,9 @@ class OrdersController {
       res.redirect('/');
     }
   }
+
 }
+
+
 
 module.exports = OrdersController;
