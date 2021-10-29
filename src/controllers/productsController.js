@@ -6,7 +6,7 @@ class ProductsController {
     const productId = req.params.id;
 
     try {
-      const urls = await Product.findOne({
+      const product = await Product.findOne({
         where: {
           id: productId,
         },
@@ -15,7 +15,8 @@ class ProductsController {
           as: 'forUrl',
         },
       });
-      res.json(urls);
+
+      res.render('products', { name: product.product_name, firstUrl: product.forUrl[0], urls: product.forUrl.slice(1), desc: product.desc_full })
     } catch (err) {
       console.log(err);
       res.redirect('/');

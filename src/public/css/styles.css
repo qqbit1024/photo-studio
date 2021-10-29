@@ -60,3 +60,36 @@ h2 {
 .generalPhoto {
   margin-bottom: 50px;
 }
+
+.carousel-item {
+  width: 950px;
+}
+
+.carousel-inner {
+  width: 950px;
+}
+
+#carouselExampleIndicators {
+  width: 950px;
+}
+
+.container-slider {
+  margin-top: 0.5%;
+  display: flex;
+  justify-content: center;
+}
+
+.alert {
+  display: flex;
+  justify-content: center;
+}
+
+.beer {
+  display: flex;
+  justify-content: center;
+}
+
+p .font-monospace {
+  /* font-family: 'Montserrat', sans-serif; */
+  font-family: 'Playfair Display', serif;
+}
