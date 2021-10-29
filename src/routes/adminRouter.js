@@ -3,26 +3,20 @@ const router = require("express").Router();
 
 const { Order, Request, Customer, Example, Product, Quantity } = require("../db/models");
 
-
 router.get("/", async (req, res) => {});
 
-
-router.get('/orders', async (req, res) => {
+router.get("/orders", async (req, res) => {
   const orders = await Order.findAll({
     include: Customer,
   });
 
-  res.render('admin/order', { orders });
+  res.render("admin/order", { orders });
 });
 
-router.post('/orders/:id', async (req, res) => {
-  const status = await Order.update(
-    { status: true },
-    { where: { id: req.params.id } }
-  );
-  res.sendStatus(200)
+router.post("/orders/:id", async (req, res) => {
+  const status = await Order.update({ status: true }, { where: { id: req.params.id } });
+  res.sendStatus(200);
 });
-
 
 router
   .route("/products")
@@ -48,7 +42,6 @@ router
   })
   .put(async (req, res) => {
     const id = req.params.id;
-    console.log("AAAAA", id);
     try {
       await Product.update({ ...req.body }, { where: { id } });
       res.sendStatus(200);
@@ -58,8 +51,25 @@ router
     }
   });
 
-
-router.get("/requests", async (req, res) => {});
+router
+  .route("/requests")
+  .get(async (req, res) => {
+    const requests = await Request.findAll({ order: ["createdAt"], include: Product });
+    res.render("admin/request", { requests });
+  })
+  .delete(async (req, res) => {
+    await Request.destroy({ where: { id: req.body.id } });
+    res.sendStatus(200);
+  })
+  .patch(async (req, res) => {
+    const id = await Request.findOne({ where: { id: req.body.id } });
+    const newStatus = await Request.update({ status: !id.status }, { where: { id: id.id } });
+    res.json({ status: !id.status });
+  })
+  .post(async (req, res) => {
+    const newRequest = await Request.create({ ...req.body });
+    res.redirect("/");
+  });
 
 router.get("/customers", async (req, res) => {});
 

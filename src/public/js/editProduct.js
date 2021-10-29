@@ -1,6 +1,5 @@
 const $editForm = document.forms.editForm;
 const productId = document.querySelector("[data-productId]").dataset.productid;
-console.log("edit edit");
 $editForm.addEventListener("submit", async (event) => {
   event.preventDefault();
   console.log(12334423);
