@@ -59,7 +59,9 @@ router
   });
 
 
-router.get("/requests", async (req, res) => {});
+router.get("/requests", async (req, res) => {
+  
+});
 
 router.get("/customers", async (req, res) => {});
 
