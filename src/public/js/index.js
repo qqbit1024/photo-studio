@@ -1,5 +1,8 @@
 const $orderForm = document.forms.orderForm;
 const $productContainer = document.querySelector('.product-container');
+const $equipInput = document.querySelector('[name=equip_count]')
+const $hoursInput = document.querySelector('[name=hours]')
+const $spanTotal = document.querySelector('#total')
 
 $productContainer.addEventListener('click', (event) => {
   if (event.target.id === 'button') {
@@ -7,6 +10,8 @@ $productContainer.addEventListener('click', (event) => {
     const { price } = event.target.closest('[data-price]').dataset;
     $orderForm.dataset.formproductid = productId;
     $orderForm.dataset.price = price;
+    $spanTotal.textContent = price
+    
   }
 });
 
@@ -23,6 +28,12 @@ document.addEventListener('submit', async (event) => {
     email: data.email,
   };
   const product = { id: productId, hours: data.hours, equip_count: data.equip_count };
+  event.target.innerHTML = `<span
+      class='spinner-border spinner-border-sm'
+      role='status'
+      aria-hidden='true'
+    ></span>
+    Loading...`
 
   const response = await fetch('/orders', {
     method: 'POST',
@@ -34,6 +45,20 @@ document.addEventListener('submit', async (event) => {
 
   if (response.ok) {
     window.location = '/';
-    // console.log('asfasdfasfasdf');
   }
 });
+
+$equipInput.addEventListener('keyup', (event) => {
+  if($equipInput.value) {
+    const price = $orderForm.dataset.price;
+    $spanTotal.textContent = price * $equipInput.value * $hoursInput.value
+  } 
+})
+
+$hoursInput.addEventListener('keyup', (event) => {
+  if($equipInput.value) {
+    const price = $orderForm.dataset.price;
+    $spanTotal.textContent = price * $equipInput.value * $hoursInput.value
+  } 
+})
+
