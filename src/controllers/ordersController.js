@@ -1,29 +1,31 @@
-const nodemailer = require('nodemailer');
-const { send } = require('process');
-const { Op } = require('sequelize');
+const nodemailer = require("nodemailer");
+const { send } = require("process");
+const { Op } = require("sequelize");
 const {
-  Customer, Order, Product, OrderProduct, Quantity,
-} = require('../db/models');
+  Customer,
+  Order,
+  Product,
+  OrderProduct,
+  Quantity,
+} = require("../db/models");
 
 const sendMail = async function (text, email) {
-
-  let transporter =  nodemailer.createTransport({
-    service:'gmail', 
+  let transporter = nodemailer.createTransport({
+    service: "gmail",
     auth: {
-      user: 'tes124444@gmail.com', //тестовы акк
-      pass: 'elbrusBOOTCAMP123', // pass
+      user: "tes124444@gmail.com", //тестовы акк
+      pass: "elbrusBOOTCAMP123", // pass
     },
   });
   let info = await transporter.sendMail({
-    from: 'tes124444@gmail.com', 
-    to: email, 
-    subject: "Photo-studio ✔️", 
-    text: `Новая заявка: ${text}`, 
-    html: `<b>Новая заявка: ${text}</b>`, 
+    from: "tes124444@gmail.com",
+    to: email,
+    subject: "Photo-studio ✔️",
+    text: `Новая заявка: ${text}`,
+    html: `<b>Новая заявка: ${text}</b>`,
   });
   console.log("Message sent: %s", info.messageId);
-
-}
+};
 
 class OrdersController {
   static async show(req, res) {
@@ -31,14 +33,14 @@ class OrdersController {
       const products = await Product.findAll({
         where: {
           product_name: {
-            [Op.not]: 'Гибкий тариф',
+            [Op.not]: "Гибкий тариф",
           },
         },
       });
-      res.render('order', { products });
+      res.render("order", { products });
     } catch (err) {
       console.log(err);
-      res.redirect('/');
+      res.redirect("/");
     }
   }
 
@@ -77,28 +79,27 @@ class OrdersController {
           equip_count: product.equip_count,
         });
       });
-      
-      const productName = await Product.findOne({where:{id:products[0].id}})
+
+      const productName = await Product.findOne({
+        where: { id: products[0].id },
+      });
       const text = `
       phone: ${customerInfo.phone}
       name: ${customerInfo.name}
       surname: ${customerInfo.surname}
       total: ${total}
-      product: ${productName.product_name } hours:  ${products[0].hours}, camera: ${products[0].equip_count}
-      `; 
+      product: ${productName.product_name} hours:  ${products[0].hours}, camera: ${products[0].equip_count}
+      `;
 
-      await sendMail(text, 'kim__dima@mail.ru')
-      console.log('sended');
+      await sendMail(text, "kim__dima@mail.ru");
+      console.log("sended");
 
       res.sendStatus(200);
     } catch (error) {
       console.log(error);
-      res.redirect('/');
+      res.redirect("/");
     }
   }
-
 }
-
-
 
 module.exports = OrdersController;

@@ -1,4 +1,4 @@
-const { Product, Example, sequelize } = require('../db/models');
+const { Product, Example, sequelize } = require("../db/models");
 
 class ProductsController {
   static async show(req, res) {
@@ -12,14 +12,19 @@ class ProductsController {
         },
         include: {
           model: Example,
-          as: 'forUrl',
+          as: "forUrl",
         },
       });
 
-      res.render('products', { name: product.product_name, firstUrl: product.forUrl[0], urls: product.forUrl.slice(1), desc: product.desc_full })
+      res.render("products", {
+        name: product.product_name,
+        firstUrl: product.forUrl[0],
+        urls: product.forUrl.slice(1),
+        desc: product.desc_full,
+      });
     } catch (err) {
       console.log(err);
-      res.redirect('/');
+      res.redirect("/");
     }
   }
 }

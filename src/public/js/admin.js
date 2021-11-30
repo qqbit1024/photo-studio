@@ -10,9 +10,8 @@ $container.addEventListener('click', async (event) => {
       method: 'POST',
     });
     if (response.ok) {
-      status.textContent = 'Статус заказа: Выполнено';
-      event.target.classList.add('disabled')
-      
+      status.innerHTML = 'Статус заказа: <b>Выполнено</b>';
+      event.target.classList.add('disabled');
     }
   }
 });

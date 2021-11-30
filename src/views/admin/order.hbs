@@ -1,9 +1,9 @@
 <script defer src='/js/admin.js'></script>
 <div class='container'>
   <div class='listWrapper'>
-    <ul class='list-group position-relative'>
+    <ul class='list-group'>
       {{#each orders}}
-        <li class='list-group-item' id='{{this.Customer.id}}'>Имя:
+        <li class='list-group-item w-75' id='{{this.Customer.id}}''>Имя:
           <b>{{this.Customer.name}}</b>
           Телефон:
           <b>{{this.Customer.phone}}</b>
@@ -17,17 +17,9 @@
             <span id='status'>Статус заказа: <b>Не выполнено</b></span>
           {{/if}}
           {{#if this.status}}
-            <button
-              name='buttonForList'
-              type='submit'
-              class='btn btn-dark position-absolute top-0 start-100 disabled'
-            >Выполнено!</button>
+            <button name='buttonForList' type='submit' class='btn btn-dark position-absolute top-0 start-100 disabled'>Выполнено</button>
           {{else}}
-            <button
-              name='buttonForList'
-              type='submit'
-              class='btn btn-dark position-absolute top-0 start-100'
-            >Выполнено</button>
+            <button name='buttonForList' type='submit' class='btn btn-dark position-absolute top-0 start-100'>Выполнено</button>
           {{/if}}
         </li>
       {{/each}}

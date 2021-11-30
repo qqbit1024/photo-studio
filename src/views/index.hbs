@@ -12,12 +12,9 @@
     </div>
     <div style="margin-bottom: 100px" class="col">
       <p class="placeholder-wave">
-        I'm Ready to Exceed Expectations Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare,
-        eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo
-        cursus id rutrum lorem imperdiet Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Voluptatibus itaque, recusandae eveniet dolorum omnis provident soluta, est, excepturi
-        aliquam minima id iure quisquam! Impedit at quisquam, ea minus esse magni!
+        I'm Ready to Exceed Expectations Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor
+        interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus itaque,
+        recusandae eveniet dolorum omnis provident soluta, est, excepturi aliquam minima id iure quisquam! Impedit at quisquam, ea minus esse magni!
       </p>
     </div>
   </div>
@@ -90,19 +87,8 @@
             {{#if this.flex}}
               <a href="/orders" tabindex="-1" class="btn btn-dark">Оформить</a>
             {{else}}
-              <a
-                href="#"
-                tabindex="-1"
-                class="btn btn-dark"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-                id="button"
-              >Оформить</a>
-              <a
-                href='/products/{{this.id}}'
-                tabindex='-1'
-                class='btn btn-dark'
-              >Подробнее</a>
+              <a href="#" tabindex="-1" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" id="button">Оформить</a>
+              <a href="/products/{{this.id}}" tabindex="-1" class="btn btn-dark">Подробнее</a>
             {{/if}}
           </div>
         </div>
@@ -112,13 +98,7 @@
   </div>
 </main>
 
-<div
-  class="modal fade"
-  id="exampleModal"
-  tabindex="-1"
-  aria-labelledby="exampleModalLabel"
-  aria-hidden="true"
->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
@@ -152,9 +132,9 @@
             <input type="text" class="form-control" value="1" name="equip_count" required />
           </div>
 
-          <div class='modal-footer'>
-            <span>Общая сумма: <span id='total'>0</span>руб. </span>
-            <button type='submit' class='btn btn-dark' id=''>Оформить</button>
+          <div class="modal-footer">
+            <span>Общая сумма: <span id="total">0</span>руб. </span>
+            <button type="submit" class="btn btn-dark" id="">Оформить</button>
           </div>
         </form>
       </div>

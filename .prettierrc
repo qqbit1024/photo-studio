@@ -1,0 +1,10 @@
+{
+  "overrides": [
+    {
+      "files": "*.hbs",
+      "options": {
+        "printWidth": 200
+      }
+    }
+  ]
+}

@@ -1,49 +1,21 @@
-<script defer src="/js/editProduct.js"></script>
+<script defer src='/js/editProduct.js'></script>
 
-<form name="editForm" data-productid="{{editProduct.id}}">
-  <div class="mb-3">
-    <label for="input product_name" class="form-label">Product name</label>
-    <input
-      type="text"
-      class="form-control"
-      id="input product_name"
-      placeholder="Product name"
-      name="product_name"
-      value="{{editProduct.product_name}}"
-    />
+<form name='editForm' data-productid='{{editProduct.id}}'>
+  <div class='mb-3'>
+    <label for='input product_name' class='form-label'>Product name</label>
+    <input type='text' class='form-control' id='input product_name' placeholder='Product name' name='product_name' value='{{editProduct.product_name}}' />
   </div>
-  <div class="mb-3">
-    <label for="input price" class="form-label">Price</label>
-    <input
-      type="text"
-      class="form-control"
-      id="input price"
-      placeholder="Price"
-      name="price"
-      value="{{editProduct.price}}"
-    />
+  <div class='mb-3'>
+    <label for='input price' class='form-label'>Price</label>
+    <input type='text' class='form-control' id='input price' placeholder='Price' name='price' value='{{editProduct.price}}' />
   </div>
-  <div class="mb-3">
-    <label for="input desc_full" class="form-label">Description full</label>
-    <input
-      type="text"
-      class="form-control"
-      id="input desc_full"
-      placeholder="Description full"
-      name="desc_full"
-      value="{{editProduct.desc_full}}"
-    />
+  <div class='mb-3'>
+    <label for='input desc_full' class='form-label'>Description full</label>
+    <input type='text' class='form-control' id='input desc_full' placeholder='Description full' name='desc_full' value='{{editProduct.desc_full}}' />
   </div>
-  <div class="mb-3">
-    <label for="input desc_short" class="form-label">Description short</label>
-    <input
-      type="text"
-      class="form-control"
-      id="input desc_short"
-      placeholder="Description short"
-      name="desc_short"
-      value="{{editProduct.desc_short}}"
-    />
+  <div class='mb-3'>
+    <label for='input desc_short' class='form-label'>Description short</label>
+    <input type='text' class='form-control' id='input desc_short' placeholder='Description short' name='desc_short' value='{{editProduct.desc_short}}' />
   </div>
-  <button type="submit" class="btn btn-primary">Edit</button>
+  <button type='submit' class='btn btn-primary'>Edit</button>
 </form>
