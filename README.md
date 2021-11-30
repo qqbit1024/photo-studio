@@ -12,10 +12,12 @@
 3. После этого администратору на почту либо на номер приходит уведомление с информацией о заказе.
 4. Нужно разработать личный кабинет администратора, где можно отвлеживать все поступившие заказы.
 
+#### Главная страница
 ![main](https://github.com/swarley72/photo-studio/raw/master/main.gif)
-![main](https://github.com/swarley72/photo-studio/raw/master/admin.gif)
+
+#### Личный кабинет администратора
+![admin](https://github.com/swarley72/photo-studio/raw/master/admin.gif)
 
 ## Запуск проекта
-
     npm i
     npm start
